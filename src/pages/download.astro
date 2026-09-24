@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { currentReleaseCopy } from '../data/release';
+---
+<BaseLayout title="Download Ferrite — active development" description="Ferrite is currently in active development. Follow the project on GitHub and read the current release status.">
+  <section class="page-hero"><div class="container"><div class="eyebrow">Download</div><h1>Not another fake download button.</h1><p>Ferrite is being tested against real launcher workflows, but it is not a public stable release yet. This page will become the home for signed Windows builds when they are ready.</p></div></section>
+  <section class="section"><div class="container"><div class="status-panel"><span class="status-dot" aria-hidden="true"></span><div><h2>{currentReleaseCopy.label}</h2><p>{currentReleaseCopy.description} The current launcher package is unsigned, and Minecraft Services approval remains an external blocker.</p><div class="hero-actions"><a class="button" href="https://github.com/ferrite-client/ferrite-client" rel="noreferrer">Follow the repository <span aria-hidden="true">↗</span></a><a class="button secondary" href="/changelog">Read the changelog</a></div></div></div></div></section>
+  <section class="section"><div class="container split"><div><div class="eyebrow">When releases open</div><h3>One page, one honest source.</h3><p>The download surface is structured for future GitHub Releases and signed Windows packages. Until then, it will never expose an internal artifact as if it were ready for general players.</p></div><div class="quote"><p>Builds exist before releases do.</p><small>Release state is shared across the site.</small></div></div></section>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const docs = [
+  ['Getting started', 'The shape of Ferrite and what to expect while the public release is in development.', '/docs/getting-started'],
+  ['Instances', 'How isolation, versions, loaders, Java and backups fit together.', '/docs/instances'],
+  ['Mods and modpacks', 'Discover, inspect and install content with provider and version context.', '/docs/mods'],
+  ['Java and loaders', 'Runtime discovery, provisioning and loader selection.', '/docs/java'],
+  ['Troubleshooting', 'Verification, repair, logs, crash analysis and support bundles.', '/docs/troubleshooting'],
+  ['Accounts and privacy', 'What sign-in and local credential storage mean in Ferrite.', '/privacy'],
+];
+---
+<BaseLayout title="Docs — Ferrite" description="Documentation structure for Ferrite's instances, mods, Java, loaders and diagnostics.">
+  <section class="page-hero"><div class="container"><div class="eyebrow">Documentation</div><h1>A clear path through the complicated parts.</h1><p>These docs will grow with the launcher. For now, they describe supported product concepts without pretending unfinished release flows are ready.</p></div></section>
+  <section class="section"><div class="container"><div class="doc-grid">{docs.map(([title, desc, href], index) => <a class="doc-card" href={href}><span>0{index + 1}</span><h2>{title}</h2><p>{desc}</p></a>)}</div></div></section>
+</BaseLayout>

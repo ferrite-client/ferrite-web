@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { currentReleaseCopy } from '../data/release';
+import { productFacts } from '../data/product';
+const shot = (name: string) => `/screenshots/${name}`;
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Native modded Minecraft launcher</div>
+        <h1>Modded Minecraft, without the launcher mess.</h1>
+        <p class="hero-copy">Ferrite keeps instances, loaders, mods, modpacks, Java and the awkward repair work in one focused Windows desktop app.</p>
+        <div class="hero-actions"><a class="button" href="/download">{currentReleaseCopy.cta} <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://github.com/ferrite-client/ferrite-client" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a></div>
+        <p class="hero-note"><span class="status-dot" aria-hidden="true"></span>{currentReleaseCopy.label} · public builds are not available yet</p>
+      </div>
+      <div class="hero-visual"><div class="visual-label"><span>Ferrite / Library</span><span>Real product capture</span></div><figure class="shot-frame"><img src={shot('library-grid.png')} width="1360" height="830" alt="Ferrite Library showing four Minecraft instances with versions, loaders and play controls" /></figure></div>
+    </div>
+  </section>
+
+  <section id="product" class="section"><div class="container"><div class="section-heading"><div class="eyebrow">The useful middle layer</div><div><h2>Choose an instance. Then go as deep as you need.</h2><p>Ferrite makes the everyday path short without hiding the controls that modded Minecraft eventually demands.</p></div></div><div class="workflow"><div class="workflow-item"><strong>01 / Library</strong><h3>Separate worlds</h3><p>Keep versions, loaders, mods, Java and settings isolated per instance.</p></div><div class="workflow-item"><strong>02 / Discover</strong><h3>Find content</h3><p>Search provider catalogues, inspect compatibility and install into the right instance.</p></div><div class="workflow-item"><strong>03 / Launch</strong><h3>Play sooner</h3><p>Ferrite discovers or provisions a compatible Java runtime and handles the setup.</p></div><div class="workflow-item"><strong>04 / Repair</strong><h3>Know what broke</h3><p>Verify files, inspect logs, back up user data and export a redacted support bundle.</p></div></div></div></section>
+
+  <section class="section"><div class="container split"><div><div class="eyebrow">Instance-first by design</div><h3>Your pack is not a folder you have to babysit.</h3><p>Instances are the boundary Ferrite works around: each one can own its Minecraft version, loader, mods, configuration, worlds, Java choice and launch settings. Clone, export, import or move carefully when you need to.</p><a class="text-link" href="/docs/instances">Read about instances <span aria-hidden="true">→</span></a></div><figure class="shot-frame"><img src={shot('instance-detail.png')} width="1360" height="830" loading="lazy" alt="Ferrite instance overview with version, loader and launch controls" /></figure></div></section>
+
+  <section class="section"><div class="container split reverse"><figure class="shot-frame"><img src={shot('page-discover.png')} width="1360" height="830" loading="lazy" alt="Ferrite Discover view with search, filters and mod content results" /></figure><div><div class="eyebrow">Modded Minecraft workflow</div><h3>Search, inspect, install. With the version context intact.</h3><p>Browse Modrinth and CurseForge from one content view. Filter by game version, loader and category, inspect a project, then install a compatible file or modpack into its destination.</p><a class="text-link" href="/docs/mods">Explore content workflows <span aria-hidden="true">→</span></a></div></div></section>
+
+  <section class="section"><div class="container split"><div><div class="eyebrow">Power without ceremony</div><h3>When “it doesn’t launch” needs an answer.</h3><p>Ferrite verifies managed files, repairs damaged artifacts, parses crash reports, keeps operation history and can export a support bundle with sensitive values redacted.</p><ul class="capability-list">{productFacts.verified.slice(4).map((fact) => <li>{fact}</li>)}</ul></div><figure class="shot-frame"><img src={shot('settings-diagnostics.png')} width="1360" height="830" loading="lazy" alt="Ferrite diagnostics settings with recent operations and support bundle controls" /></figure></div></section>
+
+  <section class="section"><div class="container split reverse"><div class="quote"><p>Desktop software for people who have already learned what a mod loader is.</p><small>C# · .NET 10 · Avalonia · Windows-first</small></div><div><div class="eyebrow">A proper desktop application</div><h3>Native where it matters.</h3><p>Ferrite is built for filesystem, process and runtime work that belongs close to the desktop—not behind a browser wrapper. The result is a focused home for the parts of Minecraft that are otherwise scattered across launchers, folders and installers.</p></div></div></section>
+
+  <section class="cta-section"><div class="container"><div class="cta-block"><div><h2>{currentReleaseCopy.title}</h2><p>{currentReleaseCopy.description}</p></div><a class="button" href="/download">{currentReleaseCopy.cta} <span aria-hidden="true">↗</span></a></div></div></section>
+</BaseLayout>

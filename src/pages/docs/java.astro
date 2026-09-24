@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Java and loaders — Ferrite docs" description="How Ferrite handles Java runtimes and Minecraft mod loaders.">
+  <section class="page-hero"><div class="container"><div class="eyebrow">Docs / Java and loaders</div><h1>Less runtime archaeology.</h1><p>Ferrite discovers installed Java runtimes and can provision a compatible runtime when an instance needs one.</p></div></section>
+  <div class="container prose"><h2>Runtime selection</h2><p>Ferrite evaluates the Minecraft version's requirements, lists discovered runtimes and lets an instance pin a compatible choice. Provisioned runtimes are validated before use.</p><h2>Loader workflows</h2><p>Verified loader paths include Fabric, Quilt, Forge, NeoForge and OptiFine. Loader installation is performed in the context of the target instance.</p></div>
+</BaseLayout>

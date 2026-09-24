@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Instances — Ferrite docs" description="How Ferrite isolates Minecraft instances and their settings.">
+  <section class="page-hero"><div class="container"><div class="eyebrow">Docs / Instances</div><h1>One instance, one context.</h1><p>Ferrite treats an instance as a complete Minecraft setup—not just a directory shortcut.</p></div></section>
+  <div class="container prose"><h2>What belongs to an instance?</h2><p>Each instance can carry its Minecraft version, loader and loader version, mods, configuration, worlds, Java choice, memory and launch arguments. This keeps experiments and long-lived worlds from quietly sharing state.</p><h2>Safe changes</h2><p>Cloning, importing, exporting and destructive content operations preserve user data through backups. The goal is to make changing a pack reversible instead of a folder-management ritual.</p><h2>Still in development</h2><p>Ferrite is active software. The public website describes verified behavior, while release availability and account access remain separate concerns.</p></div>
+</BaseLayout>
